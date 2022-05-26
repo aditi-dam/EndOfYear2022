@@ -1,0 +1,13 @@
+Things to import for Node:
+    npm install express morgan
+    npx express-generator --view=hbs
+    npm install util
+    npm install express
+    npm install morgan
+    npm install hbs
+    npm install --save-dev nodemon
+    npm install dotenv
+    npm install materialize-css@next
+
+Running the server:
+    npm run devstart
