@@ -16,11 +16,14 @@
     <h1>{{title}}</h1>
     <br>
 
-    {{#each links}}
-    <iframe width="200" height="200" src="{{this}}"></iframe> 
-    {{/each}}
+    {{#if links.length}}
+        {{#each links}}
+        <iframe width="200" height="200" src="{{this}}"></iframe> 
+        {{/each}}
+    {{else}}
+        <h5>No notes have been uploaded yet!</h5>
+    {{/if}}
 
-    
     <br>
     <a class="btn-floating waves-effect light-blue" href="/{{unit}}/add">
         <i class="material-icons">add</i></a>

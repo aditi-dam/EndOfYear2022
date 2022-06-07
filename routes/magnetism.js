@@ -27,13 +27,13 @@ function addNewLink(link) {
   let data = link + "\n";
 
   // Clear out the array manually if it gets overloaded:
-  // fs.writeFile('../magnetism.txt', '', (err) => {
+  // fs.writeFile(path.join(__dirname, "../public/links/magnetism.txt"), '', (err) => {
   //   if (err) {
   //     throw err;
   //   }
   // })  
 
-  fs.appendFile('../magnetism.txt', data, (err) => {
+  fs.appendFile(path.join(__dirname, "../public/links/magnetism.txt"), data, (err) => {
     if (err) {
       throw err;
     }
@@ -42,7 +42,7 @@ function addNewLink(link) {
 
 router.get('/', async function(req, res, next) {
     try {
-      let results = syncReadFile("../magnetism.txt");
+      let results = syncReadFile(path.join(__dirname, "../public/links/magnetism.txt"));
       res.render('magnetism', { title: 'Magnetism', links: results, unit: 'magnetism' });
     } catch (err) {
       next(err);

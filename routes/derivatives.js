@@ -27,13 +27,13 @@ function addNewLink(link) {
   let data = link + "\n";
 
   // Clear out the array manually if it gets overloaded:
-  // fs.writeFile('../derivatives.txt', '', (err) => {
+  // fs.writeFile(path.join(__dirname, "../public/links/derivatives.txt"), '', (err) => {
   //   if (err) {
   //     throw err;
   //   }
   // })  
 
-  fs.appendFile('../derivatives.txt', data, (err) => {
+  fs.appendFile(path.join(__dirname, "../public/links/derivatives.txt"), data, (err) => {
     if (err) {
       throw err;
     }
@@ -43,7 +43,7 @@ function addNewLink(link) {
 
 router.get('/', async function(req, res, next) {
     try {
-      let results = syncReadFile("../derivatives.txt");
+      let results = syncReadFile(path.join(__dirname, "../public/links/derivatives.txt"));
       res.render('derivatives', { title: 'Derivatives', links: results, unit: 'derivatives' });
     } catch (err) {
       next(err);
