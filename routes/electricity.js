@@ -8,6 +8,17 @@ function syncReadFile(filename) {
   const contents = fs.readFileSync(filename, 'utf-8');
   const arr = contents.split(/\r?\n/);
 
+  if (arr.length === 0) {
+    console.log("Array is empty.");
+  }
+  else {
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] == '') {
+        arr.splice(i, 1);
+      }
+    }
+  }
+
   console.log(arr);
   return arr;
 }
@@ -15,21 +26,19 @@ function syncReadFile(filename) {
 function addNewLink(link) {
   let data = link + "\n";
 
-  /**
-   * If the array gets overloaded by accident,
-   * comment out the appendFile line and replace it with
-   * fs.writeFile('../electricity.txt', '', (err)...)
-   */
+  // Clear out the array manually if it gets overloaded:
+  // fs.writeFile('../electricity.txt', '', (err) => {
+  //   if (err) {
+  //     throw err;
+  //   }
+  // })  
 
-  /*fs.appendFile('../electricity.txt', data,*/
-  fs.writeFile('../electricity.txt', '', (err) => {
+  fs.appendFile('../electricity.txt', data, (err) => {
     if (err) {
       throw err;
     }
   })
 }
-
-// let links = syncReadFile(path.join(__dirname, "../public/links/electricity.txt"));
 
 router.get('/', async function(req, res, next) {
     try {
@@ -52,9 +61,8 @@ router.post('/', async function(req, res, next) {
     try {
       let results = req.body.note_link;
       console.log(results);
-      // addNewLink(results);
-      //syncReadFile("../electricity.txt");
-
+      addNewLink(results);
+      
       res.redirect(`/electricity`);
     } catch (err) {
       next(err);

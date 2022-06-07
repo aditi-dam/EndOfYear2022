@@ -8,24 +8,42 @@ function syncReadFile(filename) {
   const contents = fs.readFileSync(filename, 'utf-8');
   const arr = contents.split(/\r?\n/);
 
+  if (arr.length === 0) {
+    console.log("Array is empty.");
+  }
+  else {
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] == '') {
+        arr.splice(i, 1);
+      }
+    }
+  }
+
   console.log(arr);
   return arr;
 }
 
 function addNewLink(link) {
   let data = link + "\n";
-  fs.writeFile('../public/links/derivatives.txt', data, (err) => {
+
+  // Clear out the array manually if it gets overloaded:
+  // fs.writeFile('../derivatives.txt', '', (err) => {
+  //   if (err) {
+  //     throw err;
+  //   }
+  // })  
+
+  fs.appendFile('../derivatives.txt', data, (err) => {
     if (err) {
       throw err;
     }
   })
 }
 
-let links = syncReadFile(path.join(__dirname, "../public/links/derivatives.txt"));
 
 router.get('/', async function(req, res, next) {
     try {
-      let results = links;
+      let results = syncReadFile("../derivatives.txt");
       res.render('derivatives', { title: 'Derivatives', links: results, unit: 'derivatives' });
     } catch (err) {
       next(err);

@@ -8,24 +8,41 @@ function syncReadFile(filename) {
   const contents = fs.readFileSync(filename, 'utf-8');
   const arr = contents.split(/\r?\n/);
 
+  if (arr.length === 0) {
+    console.log("Array is empty.");
+  }
+  else {
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] == '') {
+        arr.splice(i, 1);
+      }
+    }
+  }
+
   console.log(arr);
   return arr;
 }
 
 function addNewLink(link) {
   let data = link + "\n";
-  fs.writeFile('../public/links/magnetism.txt', data, (err) => {
+
+  // Clear out the array manually if it gets overloaded:
+  // fs.writeFile('../magnetism.txt', '', (err) => {
+  //   if (err) {
+  //     throw err;
+  //   }
+  // })  
+
+  fs.appendFile('../magnetism.txt', data, (err) => {
     if (err) {
       throw err;
     }
   })
 }
 
-let links = syncReadFile(path.join(__dirname, "../public/links/magnetism.txt"));
-
 router.get('/', async function(req, res, next) {
     try {
-      let results = links;
+      let results = syncReadFile("../magnetism.txt");
       res.render('magnetism', { title: 'Magnetism', links: results, unit: 'magnetism' });
     } catch (err) {
       next(err);
