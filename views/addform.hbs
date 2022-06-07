@@ -1,0 +1,23 @@
+<form id="add_notes" method="post" action="/{{unit}}">
+    <input type="hidden" name="unit_id" id="unit_id" value="/{{unit}}">
+
+<div class="container">
+
+    <h1>{{ title }}</h1>
+            
+    <p>Make sure that your PDF is accessible to everyone and ends with '/preview'.</p>
+
+    <div class="row">
+        <div class="input-field col s12">
+        <input type="text" name="note_link" id="note_link" class="validate" data-length="32" required>
+        <label for="note_link"></label>
+        </div>
+    </div>
+
+    <div class="button_wrapper">
+        <button class="submit waves-effect waves-light light-blue btn" type="submit">Submit</button>
+    </div>
+
+</div>
+</form>
+      

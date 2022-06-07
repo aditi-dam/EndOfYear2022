@@ -30,7 +30,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 app.use('/physics', physicsRouter);
 app.use('/physics2023', phys2023Router);
