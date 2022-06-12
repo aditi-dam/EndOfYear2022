@@ -15,9 +15,13 @@
     </nav>
 
     <div class="sidenav" id="slide-out">
-        <a class="sidenav-close" href="javascript:void(0)">&times;</a>
-        <p>Hi</p>
+        <a class="sidenav-close" id="sidenav-close" onclick="saveFile()" href="#">&times;</a>
+        <h6>Notepad</h6>
+        <div class="content">
+            <textarea class="txtContent" id="txtContent"></textarea>
+        </div>
     </div>
+    <br>
     <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
     
 
@@ -41,7 +45,29 @@
 
 <script>
     $(document).ready(function () {
-        $(".button-collapse").sideNav();
+        $(".button-collapse").sideNav({
+            closeOnClick: true
+        });
     });
+
+    document.getElementById("sidenav-close").addEventListener("click", saveFile);
+
+    document.getElementById('txtContent').defaultValue = fs.readFileSync(path.join(__dirname, "../public/notepad.txt"), "utf-8");
+
+    let saveFile = () => {
+        console.log("Saving data");
+        const text = document.getElementById('txtContent');
+        let data = text.value;
+        console.log(data);
+
+        fs.writeFile(path.join(__dirname, "../public/notepad.txt"), data, (err) => {
+            if (err) {
+                throw err;
+            }
+        })  
+
+        console.log("Notepad saved.");
+    }
+
 </script>
 

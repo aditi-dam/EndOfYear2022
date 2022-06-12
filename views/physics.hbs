@@ -1,5 +1,9 @@
 <link rel="stylesheet" href="/styles/materialize.min.css">
+<link rel="stylesheet" href="/styles/style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
 <div class="container">
     <nav>
@@ -11,6 +15,16 @@
         </div>
     </nav>
 
+    <div class="sidenav" id="slide-out">
+        <a class="sidenav-close" href="#">&times;</a>
+        <h6>Notepad</h6>
+        <div class="content">
+            <textarea class="txtContent" id="txtContent"></textarea>
+        </div>
+    </div>
+    <br>
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+    
     <h1>{{title}}</h1>
     <br>
 
@@ -24,3 +38,10 @@
     
 </div>
 
+<script>
+    $(document).ready(function () {
+        $(".button-collapse").sideNav({
+            closeOnClick: true
+        });
+    });
+</script>

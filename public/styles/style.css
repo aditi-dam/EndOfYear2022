@@ -2,6 +2,7 @@ a {
   color: #00B7FF;
 }
 
-/* #slide-out {
-
-} */
+#txtContent {
+  min-height: 500px;
+  resize: vertical;
+}
