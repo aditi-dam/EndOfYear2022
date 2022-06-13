@@ -1,4 +1,4 @@
-a {
+.sidenav {
   color: #00FF00;
 }
 
@@ -9,5 +9,6 @@ a {
 
 html {
   font-family: "Rockwell";
+  margin: auto;
 }
 
