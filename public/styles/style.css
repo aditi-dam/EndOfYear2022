@@ -2,6 +2,10 @@
   color: #00FF00;
 }
 
+nav {
+  color: #008080;
+}
+
 #txtContent {
   min-height: 500px;
   resize: vertical;
