@@ -4,22 +4,40 @@
 <head>
     <link rel="stylesheet" href="button.css">
 </head>
-<style>
-    button {
-        display: block;
-        width: 250px;
-        height: 50px;
-        line-height: 50px;
-        font-weight: bold;
-        text-decoration: none;
-        background: #333;
-        text-align: center;
-        color: #fff;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        border: 3px solid #333;
-        transition: all .35s;
-    }
+<style>ow
+button {
+  background: darken($red, 1.5%);
+  font-weight: 100;
+  
+  svg {
+    height: 45px;
+    left: 0;
+    position: absolute;
+    top: 0; 
+    width: 100%; 
+  }
+  
+  rect {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-dasharray: 422, 0;
+    transition: all 0.35s linear;
+  }
+}
+
+    button:hover {
+  background: rgba($red, 0);
+  font-weight: 900;
+  letter-spacing: 1px;
+  
+  rect {
+    stroke-width: 5;
+    stroke-dasharray: 15, 310;
+    stroke-dashoffset: 48;
+    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}
 </style>
 <div class="container">
 
@@ -35,7 +53,7 @@
     </div>
 
     <div class="button_wrapper">
-        <button class="submit waves-effect waves-light light-blue btn" type="submit">Submit hi</button>
+        <button class="submit waves-effect waves-light light-blue btn" type="submit">Submit</button>
     </div>
 
 </div>
