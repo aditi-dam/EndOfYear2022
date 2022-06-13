@@ -1,9 +1,9 @@
-a {
+.sidenav {
   color:#98FB98;
 }
 
-.sidenav-close {
-  color: #00FF00;
+nav{
+  color: #7FFFD4;
 }
 
 #txtContent {
