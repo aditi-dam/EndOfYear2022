@@ -1,4 +1,6 @@
 a {
+  margin-top: 25px;
+  margin-right: 25px;
   color: #00B7FF;
 }
 
@@ -9,9 +11,8 @@ a {
 
 html {
   font-family: "Rockwell";
-  margin-top: 50px;
-  margin-bottom: 50px;
-  margin-right: 100px;
-  margin-left: 100px;
+  margin-top: 25px;
+  margin-right: 25px;
+  margin-left: 25px;
 }
 
