@@ -2,6 +2,11 @@ a {
   color: #48d848;
 }
 
+#add-button {
+  background-color: #48d848;
+  margin-top: 10px;
+}
+
 #txtContent {
   min-height: 500px;
   resize: vertical;
@@ -11,7 +16,12 @@ a {
   margin-left: 10px;
 }
 
-.container, .breadcrumb {
+.container {
   font-family: "Rockwell";
+}
+
+.breadcrumb {
+  font-family: "Rockwell";
+  margin-left: 9px;
 }
 
