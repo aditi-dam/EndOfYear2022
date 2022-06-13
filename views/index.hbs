@@ -41,24 +41,24 @@
 }
 </style>
 
-<div class="container">
-    <nav>
-        <div class="col s12">
-            <a href="/" class="breadcrumb" >Subjects</a>
-        </div>
-        </div>
-    </nav>
-
-    <div class="sidenav" id="slide-out">
-        <a class="sidenav-close" id="sidenav-close" onclick="saveFile()" href="#">&times;</a>
-        <h6>Notepad</h6>
-        <div class="content">
-            <textarea class="txtContent" id="txtContent"></textarea>
-        </div>
+<nav>
+    <div class="col s12 light-blue">
+        <a href="/" class="breadcrumb">Subjects</a>
     </div>
-    <br>
-    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-    
+</nav>
+
+<div class="sidenav" id="slide-out">
+    <a class="sidenav-close" id="sidenav-close" href="#">&times;</a>
+    <h6>Notepad</h6>
+    <div class="content">
+        <textarea class="txtContent" id="txtContent"></textarea>
+    </div>
+</div>
+<br>
+<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+
+
+<div class="container">    
 
     <h1>{{title}}</h1>
     <p>Welcome to the {{title}}!</p>

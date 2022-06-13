@@ -1,5 +1,5 @@
 a {
-  color: #00FF00;
+  color: #48d848;
 }
 
 #txtContent {
@@ -7,8 +7,11 @@ a {
   resize: vertical;
 }
 
-html {
+.button-collapse {
+  margin-left: 10px;
+}
+
+.container, .breadcrumb {
   font-family: "Rockwell";
-  margin: auto;
 }
 
