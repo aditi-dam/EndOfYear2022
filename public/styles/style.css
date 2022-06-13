@@ -1,4 +1,4 @@
-a, nav {
+a {
   color: #3CB371;
 }
 
@@ -7,7 +7,7 @@ a, nav {
   resize: vertical;
 }
 
-html * {
+html {
   font-family: "Rockwell";
   margin-top: 25px;
   margin-right: 25px;
