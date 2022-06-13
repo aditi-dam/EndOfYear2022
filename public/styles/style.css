@@ -1,6 +1,5 @@
 a {
   color: #00B7FF;
-  margin-right: 25px;
 }
 
 #txtContent {
@@ -8,7 +7,7 @@ a {
   resize: vertical;
 }
 
-html {
+html * {
   font-family: "Rockwell";
   margin-top: 25px;
   margin-right: 25px;
