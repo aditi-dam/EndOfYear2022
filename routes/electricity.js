@@ -26,12 +26,14 @@ function syncReadFile(filename) {
 function addNewLink(link) {
   let data = link + "\n";
 
+/*
 //Clear out the array manually if it gets overloaded:
 fs.writeFile(path.join(__dirname, "../public/links/electricity.txt"), '', (err) => {
    if (err) {
      throw err;
    }
  })  
+ */
 
   fs.appendFile(path.join(__dirname, "../public/links/electricity.txt"), data, (err) => {
     if (err) {
