@@ -26,12 +26,12 @@ function syncReadFile(filename) {
 function addNewLink(link) {
   let data = link + "\n";
 
-  // Clear out the array manually if it gets overloaded:
-  // fs.writeFile(path.join(__dirname, "../public/links/derivatives.txt"), '', (err) => {
-  //   if (err) {
-  //     throw err;
-  //   }
-  // })  
+ //Clear out the array manually if it gets overloaded:
+fs.writeFile(path.join(__dirname, "../public/links/derivatives.txt"), '', (err) => {
+   if (err) {
+     throw err;
+  }
+ })  
 
   fs.appendFile(path.join(__dirname, "../public/links/derivatives.txt"), data, (err) => {
     if (err) {
